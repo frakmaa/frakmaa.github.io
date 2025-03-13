@@ -1,0 +1,29 @@
+<button [routerLink]="['/jobs']">Back to jobs</button>
+@if (job | async; as j) {
+  <div class="job-details">
+    <div class="header">
+      <img [src]="j.companyLogo" alt="Company Logo">
+      <div class="infos">
+        <h1>{{ j.companyName }} - {{ j.title }}</h1>
+        <p><small>{{ j.reference }}</small></p>
+        <p>
+          @for (tag of j.types; track tag) {
+            <span class="tag">
+            <span [innerHTML]="tag"></span>
+          </span>
+          }
+        </p>
+        <p>
+          @for (tag of j.industries; track tag) {
+            <span class="tag">
+            <span [innerHTML]="tag"></span>
+          </span>
+          }
+        </p>
+        <p>{{ j.location }}</p>
+        <p>{{ j.publishDate | date }}</p>
+      </div>
+    </div>
+    <div [innerHTML]="j.description"></div>
+  </div>
+}

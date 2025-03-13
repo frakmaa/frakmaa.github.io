@@ -1,0 +1,7 @@
+@if (jobs | async; as jobs) {
+  @for (job of jobs; track job.id) {
+    <app-job-item [job]="job" (favorite)="onFavorite(job)"/>
+  } @empty {
+    <p>No jobs found.</p>
+  }
+}

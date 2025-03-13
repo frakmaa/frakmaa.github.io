@@ -1,0 +1,8 @@
+<div class="header">
+  <span id="app-name">{{title}}</span>
+  <div [routerLink]="['/jobs']" routerLinkActive="active-root">Jobs</div>
+  <div [routerLink]="['/favorites']" routerLinkActive="active-root">Favorites</div>
+</div>
+<div class="page">
+  <router-outlet/>
+</div>

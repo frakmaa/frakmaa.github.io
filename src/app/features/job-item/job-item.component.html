@@ -1,0 +1,15 @@
+<div class="item">
+  <img [src]="job().companyLogo" alt="Company Logo">
+  <div class="infos">
+    <h2>
+      <a [routerLink]="['/jobs', job().id]">{{ job().title }}</a>
+    </h2>
+    <p>{{ job().companyName }}</p>
+    <p>{{ job().reference }}</p>
+  </div>
+  @if (favoriteButton()) {
+    <div class="favorite" (click)="favorite.emit()" (keydown.enter)="favorite.emit()">
+      <span class="icon-star" [ngClass]="{'active': job().favorite}" [id]="'star-'+job().id"></span>
+    </div>
+  }
+</div>
