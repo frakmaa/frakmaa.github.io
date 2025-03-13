@@ -7,6 +7,9 @@
   display: flex;
   align-items: center;
 
+  background-color: var(--back-color);
+  z-index: 1;
+
   #app-name {
     font-size: 1.5rem;
     font-weight: bold;
@@ -34,12 +37,13 @@
   }
 
   div.active-root {
-    background-color: var(--blockquote-color);
+    background-color: var(--fore-color);
+    color: var(--back-color);
   }
 }
 
 .page {
-  margin: 6rem auto;
+  margin: 5rem auto;
 
   max-width: 80rem;
 }
