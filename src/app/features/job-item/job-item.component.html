@@ -4,12 +4,12 @@
     <h2>
       <a [routerLink]="['/jobs', job().id]">{{ job().title }}</a>
     </h2>
-    <p>{{ job().companyName }}</p>
-    <p>{{ job().reference }}</p>
+    <div class="company">{{ job().companyName }}</div>
+    <div class="reference">{{ job().reference }}</div>
   </div>
   @if (favoriteButton()) {
-    <div class="favorite" (click)="favorite.emit()" (keydown.enter)="favorite.emit()">
+    <button class="favorite" (click)="favorite.emit()" (keydown.enter)="favorite.emit()">
       <span class="icon-star" [ngClass]="{'active': job().favorite}" [id]="'star-'+job().id"></span>
-    </div>
+    </button>
   }
 </div>

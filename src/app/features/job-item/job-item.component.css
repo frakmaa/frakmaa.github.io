@@ -1,42 +1,53 @@
 div.item {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  border-radius: var(--universal-border-radius);
+  overflow: hidden;
+
+  background: var(--button-back-color);
 
   img {
     width: 10rem;
     height: 10rem;
-    border-radius: 1rem;
+    border-radius: var(--universal-border-radius);
   }
 
   .infos {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin: 1rem;
+    margin-left: var(--universal-margin);
     width: 100%;
 
-    h2 {
-      cursor: pointer;
 
+    h2 {
+      margin: 0.5rem 0;
+
+      a {
+        line-height: normal;
+      }
     }
+
+    .reference {
+      color: grey;
+    }
+
   }
 
   .favorite {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 1rem;
+    padding: 0 var(--universal-padding);
+    margin:0;
+
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
 
     cursor: pointer;
 
+    transition: background ease-in-out 100ms;
     &:hover {
-      background-color: #232323;
-      color: white;
-    }
-
-    span.active {
-      background-color: yellow;
+      background-color: var(--button-hover-back-color);
     }
   }
 }

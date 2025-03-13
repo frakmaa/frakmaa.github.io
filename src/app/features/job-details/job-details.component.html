@@ -5,23 +5,23 @@
       <img [src]="j.companyLogo" alt="Company Logo">
       <div class="infos">
         <h1>{{ j.companyName }} - {{ j.title }}</h1>
-        <p><small>{{ j.reference }}</small></p>
-        <p>
+        <div><small>{{ j.reference }}</small></div>
+        <div>
           @for (tag of j.types; track tag) {
             <span class="tag">
             <span [innerHTML]="tag"></span>
           </span>
           }
-        </p>
-        <p>
+        </div>
+        <div>
           @for (tag of j.industries; track tag) {
             <span class="tag">
             <span [innerHTML]="tag"></span>
           </span>
           }
-        </p>
-        <p>{{ j.location }}</p>
-        <p>{{ j.publishDate | date }}</p>
+        </div>
+        <div>{{ j.location }}</div>
+        <div>{{ j.publishDate | date }}</div>
       </div>
     </div>
     <div [innerHTML]="j.description"></div>
