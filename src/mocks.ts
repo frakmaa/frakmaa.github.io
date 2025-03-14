@@ -307,7 +307,7 @@ const ALL_JOBS = [
 ];
 
 export const mockHandlers = [
-  http.get("/jobs/:id", ({ params }) => {
+  http.get("/api/jobs/:id", ({ params }) => {
     // @ts-ignore
     if (params.id in DETAILED) {
       // @ts-ignore
@@ -316,7 +316,7 @@ export const mockHandlers = [
       return new HttpResponse("", { status: 404 });
     }
   }),
-  http.get("/jobs", ({ request, params, cookies }) => {
+  http.get("/api/jobs", ({ request, params, cookies }) => {
     return HttpResponse.json(ALL_JOBS);
   }),
 ];
